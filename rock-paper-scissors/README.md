@@ -1,17 +1,22 @@
 # Rock Paper Scissors
 
-A command-line Rock Paper Scissors game implemented in both Rust and TypeScript. Each version offers the same simple interactive experience with colored output and session statistics.
+A terminal Rock Paper Scissors game implemented in Rust and TypeScript.
 
 ![Rock Paper Scissors gameplay](./image.png)
 
 ## Features
 
-- Play rock, paper, or scissors against the computer
-- Use full commands or shortcuts: `rock`/`r`, `paper`/`p`, and `scissors`/`s`
-- View wins, losses, draws, and elapsed time with `stats` or `st`
-- End the game with `quit` or `q`
+- Colored terminal output - external dependencies and terminal formatting
+- Session statistics - state representation, data modeling, and mutation
+- Elapsed time - standard-library APIs and state lifetime
+- Full and shorthand commands - input parsing and interface design
+- `stats` and `quit` commands - explicit control flow and application state
 
-## Run the Rust version
+Persisting statistics would extend the project into filesystem I/O, serialization, and error handling.
+
+## Run
+
+### Rust
 
 Requires [Rust](https://www.rust-lang.org/tools/install).
 
@@ -20,7 +25,7 @@ cd rust
 cargo run
 ```
 
-## Run the TypeScript version
+### TypeScript
 
 Requires [Bun](https://bun.com/).
 

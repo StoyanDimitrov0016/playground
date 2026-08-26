@@ -18,7 +18,7 @@ enum PlayerCommand {
 }
 
 #[derive(Debug, Copy, Clone, PartialEq)]
-enum GameRoundResult {
+enum RoundResult {
     PlayerWon,
     ComputerWon,
     Draw,
@@ -89,9 +89,9 @@ fn main() {
         update_session_stats(&mut stats, round_result);
 
         match round_result {
-            GameRoundResult::PlayerWon => println!("Result: {}", "You win!".bold().green()),
-            GameRoundResult::ComputerWon => println!("Result: {}", "Computer wins!".bold().red()),
-            GameRoundResult::Draw => println!("Result: {}", "Draw!".bold().yellow()),
+            RoundResult::PlayerWon => println!("Result: {}", "You win!".bold().green()),
+            RoundResult::ComputerWon => println!("Result: {}", "Computer wins!".bold().red()),
+            RoundResult::Draw => println!("Result: {}", "Draw!".bold().yellow()),
         }
     }
 }
@@ -127,27 +127,27 @@ fn receive_player_command() -> Option<PlayerCommand> {
     }
 }
 
-fn determine_round_result(player: Choice, computer: Choice) -> GameRoundResult {
+fn determine_round_result(player: Choice, computer: Choice) -> RoundResult {
     match (player, computer) {
         (Choice::Rock, Choice::Rock)
         | (Choice::Paper, Choice::Paper)
-        | (Choice::Scissors, Choice::Scissors) => GameRoundResult::Draw,
+        | (Choice::Scissors, Choice::Scissors) => RoundResult::Draw,
 
         (Choice::Rock, Choice::Scissors)
         | (Choice::Paper, Choice::Rock)
-        | (Choice::Scissors, Choice::Paper) => GameRoundResult::PlayerWon,
+        | (Choice::Scissors, Choice::Paper) => RoundResult::PlayerWon,
 
-        _ => GameRoundResult::ComputerWon,
+        _ => RoundResult::ComputerWon,
     }
 }
 
-fn update_session_stats(stats: &mut SessionStatistics, result: GameRoundResult) {
+fn update_session_stats(stats: &mut SessionStatistics, result: RoundResult) {
     stats.rounds += 1;
 
     match result {
-        GameRoundResult::PlayerWon => stats.player_wins += 1,
-        GameRoundResult::ComputerWon => stats.computer_wins += 1,
-        GameRoundResult::Draw => stats.draws += 1,
+        RoundResult::PlayerWon => stats.player_wins += 1,
+        RoundResult::ComputerWon => stats.computer_wins += 1,
+        RoundResult::Draw => stats.draws += 1,
     }
 }
 

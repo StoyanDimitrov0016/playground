@@ -1,15 +1,14 @@
-# typescript
+# Rock Paper Scissors - TypeScript
 
-To install dependencies:
+The TypeScript rewrite of the command-line Rock Paper Scissors game.
+
+Requires [Bun](https://bun.com/).
 
 ```bash
 bun install
-```
-
-To run:
-
-```bash
 bun run index.ts
 ```
 
-This project was created using `bun init` in bun v1.4.0. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Play commands: `rock`/`r`, `paper`/`p`, and `scissors`/`s`.
+
+Session commands: `stats`/`st` shows statistics and `quit`/`q` exits the game.

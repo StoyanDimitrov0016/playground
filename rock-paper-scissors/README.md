@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-A terminal Rock Paper Scissors game implemented in Rust and TypeScript.
+A terminal Rock Paper Scissors game implemented in Rust, TypeScript, and Odin.
 
 ![Rock Paper Scissors gameplay](./image.png)
 
@@ -33,4 +33,13 @@ Requires [Bun](https://bun.com/).
 cd typescript
 bun install
 bun run index.ts
+```
+
+### Odin
+
+Requires [Odin](https://odin-lang.org/docs/install/).
+
+```bash
+cd odin
+odin run .
 ```
